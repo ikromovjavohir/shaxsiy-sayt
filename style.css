@@ -280,10 +280,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 45% 30%;
-  /* Instagram skrinshotidagi o'q va nuqtalarni chetdan kesib tashlash */
-  transform: scale(1.12);
-  transform-origin: 45% 35%;
+  object-position: 55% 30%; /* yuz markazda tursin */
   z-index: 1;
 }
 
