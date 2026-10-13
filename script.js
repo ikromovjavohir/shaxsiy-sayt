@@ -167,6 +167,8 @@ function markActive() {
   sections.forEach((sec, i) => {
     if (sec.getBoundingClientRect().top <= y) current = i;
   });
+  // sahifa oxiriga yetilganda oxirgi bo'lim (Aloqa) belgilanadi
+  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) current = sections.length - 1;
   navLinks.forEach((a, i) => a.classList.toggle("active", i === current));
 }
 
@@ -214,4 +216,91 @@ askForm.addEventListener("submit", async (e) => {
   } finally {
     askBtn.disabled = false;
   }
+});
+
+// ===== Yengil jonlanish =====
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// 1) Scroll qilganda bo'limlar pastdan ko'tarilib chiqadi (har biri faqat bir marta)
+document.documentElement.classList.add("js");
+
+const revealSingles = [
+  ".eyebrow", "section h2:not(.service-title)", ".section-lead",
+  ".about-card", ".slider", ".service-inner", ".ask",
+  ".contact .buttons", ".contact .note"
+];
+const revealGroups = [".facts li", ".work", ".review", ".faq details"]; // ketma-ket chiqadi
+
+document.querySelectorAll(revealSingles.join(",")).forEach((el) => el.classList.add("reveal"));
+revealGroups.forEach((sel) => {
+  document.querySelectorAll(sel).forEach((el) => {
+    const index = [...el.parentElement.children].indexOf(el);
+    el.style.setProperty("--d", `${index * 0.08}s`);
+    el.classList.add("reveal");
+  });
+});
+
+// Ekran pastki chizig'idan yuqoriga chiqqan har bir element ko'rsatiladi.
+// (Tez aylantirilganda yoki menyu orqali sakralganda ham hech biri yashirin qolib ketmaydi.)
+let pending = [...document.querySelectorAll(".reveal")];
+let ticking = false;
+
+function revealVisible() {
+  ticking = false;
+  const line = innerHeight * 0.92;
+  pending = pending.filter((el) => {
+    if (el.getBoundingClientRect().top < line) {
+      el.classList.add("in");
+      return false;
+    }
+    return true;
+  });
+  if (!pending.length) removeEventListener("scroll", onRevealScroll);
+}
+
+function onRevealScroll() {
+  if (!ticking) {
+    ticking = true;
+    requestAnimationFrame(revealVisible);
+  }
+}
+
+addEventListener("scroll", onRevealScroll, { passive: true });
+addEventListener("resize", onRevealScroll);
+revealVisible();
+
+// 3) Savol-javob akkordeoni: silliq ochiladi/yopiladi, bir vaqtda faqat bittasi ochiq
+const faqItems = [...document.querySelectorAll(".faq details")];
+
+function openFaq(d) {
+  d.open = true;
+  if (reduceMotion) return;
+  const p = d.querySelector("p");
+  const pad = getComputedStyle(p).paddingBottom;
+  p.animate(
+    [{ height: "0px", paddingBottom: "0px", opacity: 0 }, { height: p.offsetHeight + "px", paddingBottom: pad, opacity: 1 }],
+    { duration: 250, easing: "ease-out" }
+  );
+}
+
+function closeFaq(d) {
+  if (reduceMotion) { d.open = false; return; }
+  const p = d.querySelector("p");
+  const anim = p.animate(
+    [{ height: p.offsetHeight + "px", opacity: 1 }, { height: "0px", paddingBottom: "0px", opacity: 0 }],
+    { duration: 200, easing: "ease-in" }
+  );
+  anim.onfinish = () => (d.open = false);
+}
+
+faqItems.forEach((d) => {
+  d.querySelector("summary").addEventListener("click", (e) => {
+    e.preventDefault();
+    if (d.open) {
+      closeFaq(d);
+    } else {
+      faqItems.filter((o) => o !== d && o.open).forEach(closeFaq);
+      openFaq(d);
+    }
+  });
 });
