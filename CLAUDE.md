@@ -9,6 +9,8 @@
 ## Fayllar
 - `index.html` — tuzilish va matnlar; `style.css` — dizayn; `script.js` — fon animatsiyasi, telefonlar karuseli, menyu.
 - `images/javohir.webp` — hero rasmi.
+- Bo'limlar: hero, men haqimda, fanlar, xizmatlar, ishlarim, fikrlar, savol-javob (+ savol formasi), aloqa.
+- Savol formasi Netlify Forms orqali ishlaydi (lokal serverda yuborilmaydi — bu normal).
 
 ## Uslub
 - Ranglar `style.css` boshidagi `:root` o'zgaruvchilarida: to'q ko'k fon, firuza (`--accent`), iliq oltin (`--warm`).

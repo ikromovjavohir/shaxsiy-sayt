@@ -172,3 +172,46 @@ function markActive() {
 
 addEventListener("scroll", markActive, { passive: true });
 markActive();
+
+// Telefon menyusi: ☰ tugmasi bilan ochish/yopish
+const nav = document.querySelector(".nav");
+const menuBtn = document.querySelector(".menu-btn");
+
+function setMenu(open) {
+  nav.classList.toggle("open", open);
+  menuBtn.setAttribute("aria-expanded", open);
+}
+
+menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+navLinks.forEach((a) => a.addEventListener("click", () => setMenu(false)));   // bo'limga o'tganda yopiladi
+document.addEventListener("click", (e) => { if (!nav.contains(e.target)) setMenu(false); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+
+// Savol yuborish formasi (Netlify Forms) — sahifa qayta yuklanmaydi
+const askForm = document.querySelector(".ask");
+const askStatus = askForm.querySelector(".ask-status");
+const askBtn = askForm.querySelector("button");
+
+askForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  askBtn.disabled = true;
+  askStatus.className = "ask-status";
+  askStatus.textContent = "Yuborilmoqda...";
+
+  try {
+    const res = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(askForm)).toString()
+    });
+    if (!res.ok) throw new Error(res.status);
+    askForm.reset();
+    askStatus.classList.add("ok");
+    askStatus.textContent = "Rahmat! Savolingiz yuborildi — tez orada javob beraman.";
+  } catch {
+    askStatus.classList.add("err");
+    askStatus.textContent = "Yuborib bo'lmadi. Iltimos, Telegram orqali yozing: @javohiriikromov";
+  } finally {
+    askBtn.disabled = false;
+  }
+});

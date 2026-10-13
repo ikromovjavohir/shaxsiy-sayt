@@ -17,9 +17,15 @@
       <span class="logo-mark">J</span>
       <span class="logo-text">Javohir<small>Fizika · Matematika</small></span>
     </a>
-    <div class="links">
+    <button class="menu-btn" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="menu">
       <a href="#fanlar">Fanlar</a>
       <a href="#xizmatlar">Xizmatlar</a>
+      <a href="#ishlarim">Ishlarim</a>
+      <a href="#fikrlar">Fikrlar</a>
+      <a href="#savollar">Savollar</a>
       <a href="#aloqa">Aloqa</a>
     </div>
     <a class="nav-cta" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">Darsga yozilish</a>
@@ -239,9 +245,114 @@
     </section>
   </div>
 
+  <!-- Ishlarim -->
+  <section id="ishlarim" class="works container">
+    <p class="eyebrow">04 · Ishlarim</p>
+    <h2>Toshkentdagi <span class="hl">faoliyatim</span></h2>
+    <p class="section-lead">Toshkent shahrida o'quvchilar bilan ishlayman. Asosiy yo'nalishlarim:</p>
+
+    <div class="work-grid">
+      <article class="work">
+        <!-- Rasm qo'yish uchun: images/ papkasiga rasm tashlab, quyidagi div o'rniga <img src="images/ish-1.jpg" alt="..."> yozing -->
+        <div class="work-img" style="--glow: #22d3ee"><span>⚛ ∑</span><small>Rasm o'rni</small></div>
+        <div class="work-body">
+          <span class="work-place">📍 Toshkent</span>
+          <h3>Fizika va matematika darslari</h3>
+          <p>Maktab o'quvchilari va abituriyentlar bilan imtihon va olimpiadaga tayyorgarlik.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="work-img" style="--glow: #a855f7"><span>🧠</span><small>Rasm o'rni</small></div>
+        <div class="work-body">
+          <span class="work-place">📍 Toshkent</span>
+          <h3>Mnemonika mashg'ulotlari</h3>
+          <p>Bolalar va kattalarga tez yodlash va xotirani kuchaytirish usullarini o'rgataman.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="work-img" style="--glow: #f472b6"><span>&lt;/&gt;</span><small>Rasm o'rni</small></div>
+        <div class="work-body">
+          <span class="work-place">📍 Toshkent</span>
+          <h3>C++ dasturlash asoslari</h3>
+          <p>Noldan boshlovchilar uchun: algoritmik fikrlash va ilk dasturlar yozish.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Fikrlar -->
+  <section id="fikrlar" class="reviews container">
+    <p class="eyebrow">05 · Fikrlar</p>
+    <h2>O'quvchilarim <span class="hl">nima deydi</span></h2>
+
+    <div class="review-grid">
+      <figure class="review">
+        <blockquote>Ustoz juda tushunarli tushuntiradilar. Oldin fizikadan qo'rqardim, hozir masalalarni o'zim yechyapman. Zo'r ekan!</blockquote>
+        <figcaption><span class="avatar">M</span><span><b>Malika</b><small>o'quvchi</small></span></figcaption>
+      </figure>
+
+      <figure class="review">
+        <blockquote>Matematikani tushunib o'rganish boshqacha bo'larkan. Darslar zerikarli emas, savol bersam har doim javob beradilar.</blockquote>
+        <figcaption><span class="avatar">D</span><span><b>Davronbek</b><small>o'quvchi</small></span></figcaption>
+      </figure>
+
+      <figure class="review">
+        <blockquote>Mnemonika darslari menga juda yoqdi. So'zlar va formulalar endi tez yodda qolyapti. Rahmat, ustoz!</blockquote>
+        <figcaption><span class="avatar">U</span><span><b>Umid</b><small>o'quvchi</small></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Savol-javob -->
+  <section id="savollar" class="faq container">
+    <p class="eyebrow">06 · Savol-javob</p>
+    <h2>Ko'p beriladigan <span class="hl">savollar</span></h2>
+
+    <div class="faq-list">
+      <details>
+        <summary>Darslar qayerda o'tadi?</summary>
+        <p>Toshkent shahrida. Aniq joy va qulay vaqtni Telegram yoki telefon orqali birga kelishib olamiz.</p>
+      </details>
+      <details>
+        <summary>Qaysi yoshdagilar uchun?</summary>
+        <p>Maktab o'quvchilari, abituriyentlar va olimpiadaga tayyorlanayotganlar uchun. Mnemonika darslariga esa kattalar ham kelishi mumkin.</p>
+      </details>
+      <details>
+        <summary>Birinchi dars qanday o'tadi?</summary>
+        <p>Avval bilim darajangizni aniqlaymiz, keyin maqsadingizga mos reja tuzamiz. Shunda har bir dars aniq natijaga yo'naltirilgan bo'ladi.</p>
+      </details>
+    </div>
+
+    <!-- Savol yuborish formasi (Netlify Forms orqali ishlaydi) -->
+    <form class="ask" name="savol" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="savol">
+      <p class="hidden-field"><label>Bu maydonni to'ldirmang: <input name="bot-field"></label></p>
+
+      <h3>Savolingiz qoldimi?</h3>
+      <p class="ask-lead">Yozib qoldiring — o'zim javob beraman.</p>
+
+      <div class="ask-row">
+        <label>Ismingiz
+          <input type="text" name="ism" placeholder="Masalan: Aziza" required>
+        </label>
+        <label>Telefon yoki Telegram
+          <input type="text" name="aloqa" placeholder="+998 ... yoki @username" required>
+        </label>
+      </div>
+      <label>Savolingiz
+        <textarea name="savol" rows="4" placeholder="Savolingizni yozing..." required></textarea>
+      </label>
+
+      <button class="btn btn-main" type="submit">Savolni yuborish</button>
+      <p class="ask-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
   <!-- Aloqa -->
   <section id="aloqa" class="contact container">
-    <p class="eyebrow">04 · Aloqa</p>
+    <p class="eyebrow">07 · Aloqa</p>
     <h2>Birinchi qadamni <span class="hl">bugun</span> qo'ying</h2>
     <div class="buttons">
       <a class="btn btn-phone" href="tel:+998933795179">📞 +998 93 379 51 79</a>
