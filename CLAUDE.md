@@ -9,6 +9,8 @@
 ## Fayllar
 - `index.html` — tuzilish va matnlar; `style.css` — dizayn; `script.js` — fon animatsiyasi, telefonlar karuseli, menyu.
 - `images/javohir.webp` — hero rasmi.
+- `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` — ikonkalar; `og-image.jpg` (1200x630) — havola kartasi rasmi.
+- Sayt manzili o'zgarsa: `index.html` dagi `og:url` va `og:image` manzillarini ham almashtirish kerak.
 - Bo'limlar: hero, men haqimda, fanlar, xizmatlar, ishlarim, fikrlar, savol-javob (+ savol formasi), aloqa.
 - Savol formasi Netlify Forms orqali ishlaydi (lokal serverda yuborilmaydi — bu normal).
 

@@ -398,7 +398,7 @@ h2 {
 .phone[data-pos="0"]  { --pos: 0;    --scale: 1;    --light: 1;   --z: 3; cursor: default; }
 .phone[data-pos="-1"] { --pos: -1;   --scale: 0.8;  --light: 0.45; --z: 2; --y: -40px; }
 .phone[data-pos="1"]  { --pos: 1;    --scale: 0.8;  --light: 0.45; --z: 2; --y: 40px; }
-.phone[data-pos="2"]  { --pos: 1.8;  --scale: 0.65; --light: 0.3; --z: 1; --alpha: 0; }
+.phone[data-pos="2"]  { --pos: 1.8;  --scale: 0.65; --light: 0.3; --z: 1; --alpha: 0; pointer-events: none; }
 
 @media (max-width: 640px) {
   .slider { --w: min(320px, 82vw); --gap: calc(var(--w) * 0.92); }
@@ -408,21 +408,33 @@ h2 {
 .dots {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 2px;
+  margin-top: 4px;
 }
 
+/* tugma 32x32 (barmoq bilan oson bosiladi), ko'rinadigan nuqta esa ichida kichik */
 .dots button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.dots button::before {
+  content: "";
   width: 10px;
   height: 10px;
-  border: 0;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.25);
-  cursor: pointer;
   transition: width 0.4s, background 0.4s;
 }
 
-.dots button.on { width: 28px; background: var(--accent); }
+.dots button.on { width: 40px; }
+.dots button.on::before { width: 28px; background: var(--accent); }
 
 .screen {
   height: 100%;
@@ -555,7 +567,7 @@ h2 {
   margin-top: 14px;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -691,7 +703,7 @@ footer {
   .phone h3 { font-size: 1.2rem; }
   .checks li { margin-bottom: 5px; }
   .cta-note { display: none; }
-  .tab { padding: 5px 0; }
+  .tab { padding: 5px 0; min-height: 36px; }
   .tabs { margin-bottom: 8px; }
   .glass { padding: 10px; }
   .badge { margin-top: 10px; }
@@ -708,7 +720,7 @@ footer {
   .facts { gap: 8px; }
   .facts li { padding: 12px 10px; }
   .facts strong { font-size: 1.5rem; }
-  .facts span { font-size: 0.78rem; }
+  .facts span { font-size: 0.82rem; }
   .section-lead { font-size: 1.05rem; }
   .services-head { padding-top: 48px; }
 }
