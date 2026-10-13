@@ -1,0 +1,23 @@
+# Maxfiy sozlamalar (parol, kalitlar) — hech qachon GitHub'ga chiqmasin
+.env
+.env.*
+!.env.example
+
+# Claude'ning shaxsiy sozlamalari (ko'rish serveri va h.k.)
+.claude/
+
+# Operatsion tizim chiqindilari
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Muharrir fayllari
+.vscode/
+.idea/
+*.swp
+
+# Paketlar, loglar va vaqtinchalik fayllar
+node_modules/
+*.log
+*.tmp
+.netlify/

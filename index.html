@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javohir — O'qituvchi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="network"></canvas>
+
+  <!-- Navigatsiya -->
+  <nav class="nav">
+    <a href="#" class="logo">
+      <span class="logo-mark">J</span>
+      <span class="logo-text">Javohir<small>Fizika · Matematika</small></span>
+    </a>
+    <div class="links">
+      <a href="#fanlar">Fanlar</a>
+      <a href="#xizmatlar">Xizmatlar</a>
+      <a href="#aloqa">Aloqa</a>
+    </div>
+    <a class="nav-cta" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">Darsga yozilish</a>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="tag">10 yillik tajriba</p>
+      <h1>Salom, men <span>Javohir</span></h1>
+      <p class="lead">
+        Fizika, matematika, mnemonika va C++ o'qituvchisi.
+        Murakkab mavzularni sodda tilda tushuntiraman — natija esa o'zingizga ko'rinadi.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-main" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">Darsga yozilish</a>
+        <a class="btn btn-ghost" href="#fanlar">Fanlar bilan tanishish</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/javohir.webp" alt="Javohir" onerror="this.remove()">
+      <span class="initial">J</span>
+    </div>
+  </header>
+
+  <!-- Men haqimda -->
+  <section class="about container">
+    <p class="eyebrow">01 · Tanishuv</p>
+    <h2>Men <span class="hl">haqimda</span></h2>
+    <div class="about-card">
+      <p class="about-lead">
+        Salom! Men Javohir — <b>10 yildan beri</b> fizika va matematikadan dars beraman.
+      </p>
+      <p>
+        Ishonchim oddiy: har bir o'quvchi murakkab fanni tushuna oladi — faqat unga to'g'ri yo'lni ko'rsatish kerak.
+        Shuning uchun formulani yodlatmayman, uning <b>ma'nosini</b> tushuntiraman. Mnemonika usullari esa
+        o'rganilgan bilimni xotirada uzoq saqlashga yordam beradi.
+      </p>
+      <ul class="facts">
+        <li><strong>10+</strong><span>yillik tajriba</span></li>
+        <li>
+          <strong>4</strong><span>yo'nalish</span>
+          <div class="chips"><i>Fizika</i><i>Matematika</i><i>Mnemonika</i><i>C++</i></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Fanlar (kartalar) -->
+  <section id="fanlar" class="subjects container">
+    <p class="eyebrow">02 · Fanlar</p>
+    <h2>Kelajagingizga <span class="hl">eshik</span> oching</h2>
+    <p class="section-lead">
+      Har bir fan — yangi imkoniyat. Pastdagi telefonlarda nimalarni o'rganishingiz va
+      oxirida nimaga ega bo'lishingizni ko'ring.
+    </p>
+
+    <div class="slider">
+    <div class="cards">
+      <article class="phone" style="--glow: #22d3ee">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span class="island"></span><span>▂▄▆ ▮</span></div>
+          <div class="phone-icon">⚛</div>
+          <div class="tabs">
+            <button class="tab on">Imkoniyatlar</button>
+            <button class="tab">Natija</button>
+          </div>
+          <div class="glass">
+            <p class="pane on">Muhandislik, IT, tibbiyot va energetika yo'nalishlariga kirish kaliti. Kuchli fizika — OTM imtihonida raqobatchilardan oldinda bo'lish demak.</p>
+            <p class="pane">Formulani yodlamasdan tushunasiz, har qanday masalaga yondashuvni topasiz va imtihonga ishonch bilan kirasiz.</p>
+          </div>
+          <span class="badge">OTM • Olimpiada</span>
+          <h3>Fizika</h3>
+          <ul class="checks">
+            <li>Mexanika, elektr va magnetizm</li>
+            <li>Optika va termodinamika</li>
+            <li>Masala yechishning tizimli usullari</li>
+          </ul>
+          <a class="cta" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">⚡ Fizikaga yozilish</a>
+          <small class="cta-note">Telegram orqali yozing — javob beraman</small>
+          <span class="home-bar"></span>
+        </div>
+      </article>
+
+      <article class="phone" style="--glow: #3b82f6">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span class="island"></span><span>▂▄▆ ▮</span></div>
+          <div class="phone-icon">∑</div>
+          <div class="tabs">
+            <button class="tab on">Imkoniyatlar</button>
+            <button class="tab">Natija</button>
+          </div>
+          <div class="glass">
+            <p class="pane on">Barcha aniq fanlar, iqtisod va dasturlashning poydevori. Deyarli har bir oliygoh imtihonida matematika bor — u hal qiluvchi fan.</p>
+            <p class="pane">Tez hisoblaysiz, mantiqiy fikrlaysiz va testni vaqt yetmay qolish qo'rquvisiz yechasiz.</p>
+          </div>
+          <span class="badge">Imtihonga tayyorlov</span>
+          <h3>Matematika</h3>
+          <ul class="checks">
+            <li>Algebra va geometriya</li>
+            <li>Funksiyalar, tenglama va tengsizliklar</li>
+            <li>Test savollarini tez yechish usullari</li>
+          </ul>
+          <a class="cta" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">⚡ Matematikaga yozilish</a>
+          <small class="cta-note">Telegram orqali yozing — javob beraman</small>
+          <span class="home-bar"></span>
+        </div>
+      </article>
+
+      <article class="phone" style="--glow: #a855f7">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span class="island"></span><span>▂▄▆ ▮</span></div>
+          <div class="phone-icon">🧠</div>
+          <div class="tabs">
+            <button class="tab on">Imkoniyatlar</button>
+            <button class="tab">Natija</button>
+          </div>
+          <div class="glass">
+            <p class="pane on">Xotira — har bir fanni o'zlashtirish quroli. Chet tili so'zlari, formulalar va sanalar bir necha barobar tez yodlanadi.</p>
+            <p class="pane">Kam vaqtda ko'p yodlaysiz, bilim uzoq saqlanadi, o'qish esa zerikarli emas — o'yinga aylanadi.</p>
+          </div>
+          <span class="badge">Xotira texnikasi</span>
+          <h3>Mnemonika</h3>
+          <ul class="checks">
+            <li>Assotsiatsiya va obrazli yodlash</li>
+            <li>«Xotira saroyi» (lokuslar) usuli</li>
+            <li>Raqam va formulalarni obrazga aylantirish</li>
+          </ul>
+          <a class="cta" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">⚡ Mnemonikaga yozilish</a>
+          <small class="cta-note">Telegram orqali yozing — javob beraman</small>
+          <span class="home-bar"></span>
+        </div>
+      </article>
+
+      <article class="phone" style="--glow: #f472b6">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span class="island"></span><span>▂▄▆ ▮</span></div>
+          <div class="phone-icon">&lt;/&gt;</div>
+          <div class="tabs">
+            <button class="tab on">Imkoniyatlar</button>
+            <button class="tab">Natija</button>
+          </div>
+          <div class="glass">
+            <p class="pane on">IT sohasiga kirish eshigi. C++ — olimpiadalar va algoritmlar tili; uni bilgan kishi boshqa tillarni oson o'rganadi.</p>
+            <p class="pane">O'z dasturingizni yozasiz, algoritmik fikrlaysiz va kelajak kasbiga birinchi qadamni qo'yasiz.</p>
+          </div>
+          <span class="badge">Noldan boshlab</span>
+          <h3>Dasturlash asoslari (C++)</h3>
+          <ul class="checks">
+            <li>O'zgaruvchilar, shartlar va sikllar</li>
+            <li>Massivlar va funksiyalar</li>
+            <li>Oddiy algoritmlar va masalalar</li>
+          </ul>
+          <a class="cta" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">⚡ C++ ga yozilish</a>
+          <small class="cta-note">Telegram orqali yozing — javob beraman</small>
+          <span class="home-bar"></span>
+        </div>
+      </article>
+    </div>
+    </div>
+    <div class="dots"></div>
+  </section>
+
+  <!-- Xizmatlar (alohida bo'limlar) -->
+  <div id="xizmatlar">
+    <header class="container services-head">
+      <p class="eyebrow">03 · Xizmatlar</p>
+      <h2>Qanday <span class="hl">o'qitaman</span></h2>
+      <p class="section-lead">Har bir yo'nalish bo'yicha darslar sizning darajangiz va maqsadingizga moslab tuziladi.</p>
+    </header>
+    <section class="service">
+      <div class="container service-inner">
+        <div class="service-badge">⚛</div>
+        <div>
+          <p class="tag">Xizmat 01</p>
+          <h2 class="service-title">Fizika darslari</h2>
+          <p>Maktab o'quvchilari, abituriyentlar va olimpiadaga tayyorlanayotganlar uchun. Avval bilim darajangiz aniqlanadi, keyin sizga mos reja tuziladi.</p>
+          <a class="btn btn-main" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">Fizikaga yozilish</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="service alt">
+      <div class="container service-inner">
+        <div class="service-badge">∑</div>
+        <div>
+          <p class="tag">Xizmat 02</p>
+          <h2 class="service-title">Matematika darslari</h2>
+          <p>Bo'shliqlarni to'ldirish, imtihonga tayyorgarlik va mantiqiy fikrlashni rivojlantirish. Har bir mavzu amaliy masalalar bilan mustahkamlanadi.</p>
+          <a class="btn btn-main" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">Matematikaga yozilish</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="service">
+      <div class="container service-inner">
+        <div class="service-badge">🧠</div>
+        <div>
+          <p class="tag">Xizmat 03</p>
+          <h2 class="service-title">Mnemonika kursi</h2>
+          <p>Bolalar va kattalar uchun xotirani kuchaytirish mashg'ulotlari. O'rganilgan usullarni darhol o'qish va ishda qo'llay boshlaysiz.</p>
+          <a class="btn btn-main" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">Mnemonikaga yozilish</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="service alt">
+      <div class="container service-inner">
+        <div class="service-badge">&lt;/&gt;</div>
+        <div>
+          <p class="tag">Xizmat 04</p>
+          <h2 class="service-title">C++ dasturlash asoslari</h2>
+          <p>Noldan boshlovchilar uchun. Har bir darsda kichik dastur yoziladi — nazariya emas, amaliyot birinchi o'rinda.</p>
+          <a class="btn btn-main" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">C++ ga yozilish</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Aloqa -->
+  <section id="aloqa" class="contact container">
+    <p class="eyebrow">04 · Aloqa</p>
+    <h2>Birinchi qadamni <span class="hl">bugun</span> qo'ying</h2>
+    <div class="buttons">
+      <a class="btn btn-phone" href="tel:+998933795179">📞 +998 93 379 51 79</a>
+      <a class="btn btn-tg" href="https://t.me/javohiriikromov" target="_blank" rel="noopener">✈ @javohiriikromov</a>
+    </div>
+    <p class="note">Savolingiz bormi — yozing, javob beraman.</p>
+  </section>
+
+  <footer>© 2026 Javohir</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
