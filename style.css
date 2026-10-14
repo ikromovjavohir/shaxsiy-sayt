@@ -1020,7 +1020,6 @@ footer {
 .ask-status.ok { color: #4ade80; }
 .ask-status.err { color: var(--warm); }
 
-.hidden-field { display: none; }
 
 @media (max-width: 640px) {
   .ask { padding: 22px 18px; }

@@ -190,33 +190,33 @@ navLinks.forEach((a) => a.addEventListener("click", () => setMenu(false)));   //
 document.addEventListener("click", (e) => { if (!nav.contains(e.target)) setMenu(false); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
-// Savol yuborish formasi (Netlify Forms) — sahifa qayta yuklanmaydi
+// Savol formasi: Telegram'da men bilan chat ochiladi, savol matni tayyor yozilgan bo'ladi.
+// (GitHub Pages server qismini qo'llamaydi, shuning uchun xabar Telegram orqali boradi.)
 const askForm = document.querySelector(".ask");
 const askStatus = askForm.querySelector(".ask-status");
-const askBtn = askForm.querySelector("button");
+const TELEGRAM = "javohiriikromov";
 
-askForm.addEventListener("submit", async (e) => {
+askForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  askBtn.disabled = true;
-  askStatus.className = "ask-status";
-  askStatus.textContent = "Yuborilmoqda...";
+  const data = new FormData(askForm);
+  const text = [
+    "Assalomu alaykum! Saytingizdan yozyapman.",
+    "Ismim: " + data.get("ism").trim(),
+    "Aloqa: " + data.get("aloqa").trim(),
+    "Savolim: " + data.get("savol").trim()
+  ].join("\n");
 
-  try {
-    const res = await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(new FormData(askForm)).toString()
-    });
-    if (!res.ok) throw new Error(res.status);
-    askForm.reset();
-    askStatus.classList.add("ok");
-    askStatus.textContent = "Rahmat! Savolingiz yuborildi — tez orada javob beraman.";
-  } catch {
-    askStatus.classList.add("err");
-    askStatus.textContent = "Yuborib bo'lmadi. Iltimos, Telegram orqali yozing: @javohiriikromov";
-  } finally {
-    askBtn.disabled = false;
-  }
+  // zaxira: agar Telegram matnni o'zi qo'ymasa, foydalanuvchi uni joylashtira oladi
+  if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+
+  const url = "https://t.me/" + TELEGRAM + "?text=" + encodeURIComponent(text);
+  const win = window.open(url, "_blank");
+  if (win) win.opener = null;     // xavfsizlik: ochilgan sahifa saytimizni boshqara olmasin
+  else location.href = url;       // brauzer yangi oynani bloklasa — shu oynada ochamiz
+
+  askStatus.className = "ask-status ok";
+  askStatus.textContent =
+    "Telegram ochildi — xabarni yuboring. Matn chiqmasa, u nusxalangan: chatga joylashtiring.";
 });
 
 // ===== Yengil jonlanish =====

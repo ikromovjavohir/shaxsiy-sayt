@@ -16,10 +16,10 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Javohir — o'qituvchi">
   <meta property="og:locale" content="uz_UZ">
-  <meta property="og:url" content="https://candid-salmiakki-72b517.netlify.app/">
+  <meta property="og:url" content="https://ikromovjavohir.github.io/shaxsiy-sayt/">
   <meta property="og:title" content="Javohir — fizika, matematika va mnemonika o'qituvchisi">
   <meta property="og:description" content="Toshkentda fizika, matematika, mnemonika va C++ asoslaridan darslar. 10 yillik tajriba: formulani yodlatmayman — tushuntiraman.">
-  <meta property="og:image" content="https://candid-salmiakki-72b517.netlify.app/og-image.jpg">
+  <meta property="og:image" content="https://ikromovjavohir.github.io/shaxsiy-sayt/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Javohir — fizika, matematika, mnemonika va C++ o'qituvchisi, Toshkent">
@@ -345,13 +345,11 @@
       </details>
     </div>
 
-    <!-- Savol yuborish formasi (Netlify Forms orqali ishlaydi) -->
-    <form class="ask" name="savol" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="savol">
-      <p class="hidden-field"><label>Bu maydonni to'ldirmang: <input name="bot-field"></label></p>
+    <!-- Savol formasi: yuborilganda Telegram'da tayyor xabar bilan chat ochiladi (server kerak emas) -->
+    <form class="ask" name="savol">
 
       <h3>Savolingiz qoldimi?</h3>
-      <p class="ask-lead">Yozib qoldiring — o'zim javob beraman.</p>
+      <p class="ask-lead">Yozing — savolingiz Telegram orqali menga keladi, o'zim javob beraman.</p>
 
       <div class="ask-row">
         <label>Ismingiz
@@ -365,7 +363,7 @@
         <textarea name="savol" rows="4" placeholder="Savolingizni yozing..." required></textarea>
       </label>
 
-      <button class="btn btn-main" type="submit">Savolni yuborish</button>
+      <button class="btn btn-main" type="submit">Telegram orqali yuborish</button>
       <p class="ask-status" role="status" aria-live="polite"></p>
     </form>
   </section>

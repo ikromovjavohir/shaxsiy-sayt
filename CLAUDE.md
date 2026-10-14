@@ -4,15 +4,15 @@
 - Javohirning shaxsiy sayti: fizika, matematika, mnemonika va C++ asoslari o'qituvchisi, 10 yillik tajriba.
 - Kim uchun: o'quvchilar va ota-onalar, asosan telefondan kiradi.
 - Maqsad: fanlar bilan tanishtirish va Telegram (@javohiriikromov) yoki telefon orqali darsga yozdirish.
-- Netlify'da joylangan (Netlify Drop orqali qo'lda yuklanadi) va GitHub Pages'da: https://ikromovjavohir.github.io/shaxsiy-sayt/ (`main` ga push qilinganda o'zi yangilanadi).
+- Asosiy manzil — GitHub Pages: https://ikromovjavohir.github.io/shaxsiy-sayt/ (`main` ga push qilinganda o'zi yangilanadi). Netlify'dagi eski nusxa ikkinchi darajali.
 
 ## Fayllar
 - `index.html` — tuzilish va matnlar; `style.css` — dizayn; `script.js` — fon animatsiyasi, telefonlar karuseli, menyu.
 - `images/hero.jpg` — hero rasmi (`images/javohir.webp` — eski rasm, ishlatilmaydi).
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` — ikonkalar; `og-image.jpg` (1200x630) — havola kartasi rasmi.
-- Sayt manzili o'zgarsa: `index.html` dagi `og:url` va `og:image` manzillarini ham almashtirish kerak.
+- `og:url` va `og:image` GitHub Pages manziliga qaratilgan; sayt manzili o'zgarsa, ularni ham almashtirish kerak.
 - Bo'limlar: hero, men haqimda, fanlar, xizmatlar, ishlarim, fikrlar, savol-javob (+ savol formasi), aloqa.
-- Savol formasi Netlify Forms orqali ishlaydi (lokal serverda yuborilmaydi — bu normal).
+- Savol formasi serversiz: yuborilganda Telegram (@javohiriikromov) tayyor matn bilan ochiladi (GitHub Pages formani qabul qilmaydi).
 
 ## Uslub
 - Ranglar `style.css` boshidagi `:root` o'zgaruvchilarida: to'q ko'k fon, firuza (`--accent`), iliq oltin (`--warm`).
