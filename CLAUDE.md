@@ -4,11 +4,11 @@
 - Javohirning shaxsiy sayti: fizika, matematika, mnemonika va C++ asoslari o'qituvchisi, 10 yillik tajriba.
 - Kim uchun: o'quvchilar va ota-onalar, asosan telefondan kiradi.
 - Maqsad: fanlar bilan tanishtirish va Telegram (@javohiriikromov) yoki telefon orqali darsga yozdirish.
-- Netlify'da joylangan (Netlify Drop orqali qo'lda yuklanadi).
+- Netlify'da joylangan (Netlify Drop orqali qo'lda yuklanadi) va GitHub Pages'da: https://ikromovjavohir.github.io/shaxsiy-sayt/ (`main` ga push qilinganda o'zi yangilanadi).
 
 ## Fayllar
 - `index.html` — tuzilish va matnlar; `style.css` — dizayn; `script.js` — fon animatsiyasi, telefonlar karuseli, menyu.
-- `images/javohir.webp` — hero rasmi.
+- `images/hero.jpg` — hero rasmi (`images/javohir.webp` — eski rasm, ishlatilmaydi).
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` — ikonkalar; `og-image.jpg` (1200x630) — havola kartasi rasmi.
 - Sayt manzili o'zgarsa: `index.html` dagi `og:url` va `og:image` manzillarini ham almashtirish kerak.
 - Bo'limlar: hero, men haqimda, fanlar, xizmatlar, ishlarim, fikrlar, savol-javob (+ savol formasi), aloqa.
