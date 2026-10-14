@@ -168,11 +168,12 @@ function markActive() {
     if (sec.getBoundingClientRect().top <= y) current = i;
   });
   // sahifa oxiriga yetilganda oxirgi bo'lim (Aloqa) belgilanadi
-  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) current = sections.length - 1;
+  if (scrollY > 0 && innerHeight + scrollY >= document.documentElement.scrollHeight - 4) current = sections.length - 1;
   navLinks.forEach((a, i) => a.classList.toggle("active", i === current));
 }
 
 addEventListener("scroll", markActive, { passive: true });
+addEventListener("load", markActive); // sahifa to'liq yuklangach yana bir bor
 markActive();
 
 // Telefon menyusi: ☰ tugmasi bilan ochish/yopish
